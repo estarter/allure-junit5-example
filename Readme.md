@@ -2,7 +2,11 @@
 
 Test project for tesing allure reporting integration with junit5 on jenkins.
 
+Associated issue: https://github.com/jenkinsci/allure-plugin/issues/196
+
 Allure official docs: https://docs.qameta.io/allure/#_junit_5
+
+Allure chat: https://gitter.im/allure-framework/allure-core
 
 ## Run locally
 
