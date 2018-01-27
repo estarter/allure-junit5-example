@@ -1,15 +1,17 @@
-Test project for allure reports on junit5.
+# Info
+
+Test project for tesing allure reporting integration with junit5 on jenkins.
 
 Allure official docs: https://docs.qameta.io/allure/#_junit_5
 
-1. Run locally:
+## Run locally
 
 ```bash
 mvn -Dmaven.test.failure.ignore=true clean verify
 mvn allure:serve
 ```
 
-2. Run as jenkins maven job.
+## Run as jenkins maven job
 
 Configure a jenkins maven jobs, see config.xml exported job description.
 
@@ -45,7 +47,7 @@ ru.yandex.qatools.allure.jenkins.exception.AllurePluginException: Can not genera
     at hudson.model.Executor.run(Executor.java:421)
 ```
 
-3. Run as jenkins pipeline job.
+## Run as jenkins pipeline job
 
 Use Jenkinsfile to run as a pipeline.
 
