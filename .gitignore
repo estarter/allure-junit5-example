@@ -4,3 +4,4 @@
 
 # Maven files
 target
+.allure
