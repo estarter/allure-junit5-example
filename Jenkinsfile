@@ -9,17 +9,19 @@ pipeline {
             }
         }
         stage('Publish') {
-            echo 'Publish Allure report'
-            publishHTML(
+            steps {
+                echo 'Publish Allure report'
+                publishHTML(
                     target: [
-                            allowMissing         : false,
-                            alwaysLinkToLastBuild: false,
-                            keepAll              : true,
-                            reportDir            : 'target/site/allure-maven-plugin',
-                            reportFiles          : 'index.html',
-                            reportName           : "Allure Report"
+                        allowMissing         : false,
+                        alwaysLinkToLastBuild: false,
+                        keepAll              : true,
+                        reportDir            : 'target/site/allure-maven-plugin',
+                        reportFiles          : 'index.html',
+                        reportName           : "Allure Report"
                     ]
-            )
+                )
+            }
         }
     }
     post {
