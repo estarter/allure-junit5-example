@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage("Delete All") {
+            steps {
+                deleteDir()
+            }
+        }
         stage("Build") {
             steps {
                 withMaven(maven: 'mvn') {
@@ -22,11 +27,6 @@ pipeline {
                     ]
                 )
             }
-        }
-    }
-    post {
-        always {
-            deleteDir()
         }
     }
 }
