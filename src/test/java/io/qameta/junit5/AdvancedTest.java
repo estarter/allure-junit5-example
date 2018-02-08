@@ -3,9 +3,11 @@ package io.qameta.junit5;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import io.qameta.allure.Feature;
+import io.qameta.allure.Flaky;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
@@ -14,31 +16,35 @@ import io.qameta.allure.Step;
  * eroshenkoam
  * 24.10.17
  */
+@DisplayName("SUITE: AdvancedTest")
 public class AdvancedTest {
 
     @Test
-    @DisplayName("Test number 13, critical")
-    @Feature("Some feature 324")
+    @DisplayName("Test Case: another critical test")
+    @Feature("Feature-2")
+    @Tag("read")
     @Severity(SeverityLevel.CRITICAL)
     public void testOutput() {
-        firstStep("12");
+        firstStep(5);
         secondStep();
         fourthStep();
     }
 
     @Test
-    @DisplayName("Test number 24, normal")
-    @Feature("Some feature 25")
+    @Flaky
+    @DisplayName("Test Case: another normal test")
+    @Feature("Feature-1")
+    @Tag("write")
     @Severity(SeverityLevel.NORMAL)
     public void testOutput_2() {
-        firstStep("12");
+        firstStep(5);
         secondStep();
-        thirdStep("14");
+        thirdStep(7);
     }
 
     @Step
-    public void firstStep(String sa) {
-        assertEquals("12",sa);
+    public void firstStep(int sa) {
+        assertEquals(5, sa);
     }
 
     @Step
@@ -46,12 +52,13 @@ public class AdvancedTest {
     }
 
     @Step
-    public void thirdStep(String param) {
-        assertEquals("12", param);
+    public void thirdStep(int param) {
+        assertEquals(5, param);
     }
 
     @Step
     public void fourthStep() {
 
     }
+
 }

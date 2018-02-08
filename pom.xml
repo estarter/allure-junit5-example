@@ -20,6 +20,12 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+        </dependency>
+
         <!-- Test API(s) -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -45,6 +51,13 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
             <version>2.0-BETA21</version>
+        </dependency>
+
+        <dependency>
+            <!-- the SNAPSHOT version uploaded in our Artifactory. should be replaced after the next official release. -->
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit-platform</artifactId>
+            <version>2.0-PREBETA22</version>
         </dependency>
     </dependencies>
 
