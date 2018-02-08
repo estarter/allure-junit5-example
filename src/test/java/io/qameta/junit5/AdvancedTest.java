@@ -33,7 +33,7 @@ public class AdvancedTest {
     public void testOutput_2() {
         firstStep("12");
         secondStep();
-        thirdStep("12");
+        thirdStep("14");
     }
 
     @Step
